@@ -5,8 +5,7 @@ import { Request, Response } from 'express';
 
 export default {
   getList: async (req: Request, res: Response) => {
-    // const data = await scanModel.find().lean();
-    const data = 20;
+    const data = await scanModel.find().lean();
     return res.json({ data });
   },
 

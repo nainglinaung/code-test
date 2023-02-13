@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "0e9a356f-cebe-4994-8f9a-55bed8922e5d",
+		"name": "GuardRails",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2092802"
+	},
+	"item": [
+		{
+			"name": "Get Scan Results",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{app_url}}/api/scan",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"api",
+						"scan"
+					]
+				},
+				"description": "Get the list of Scan Result\n\n| **name** | type | **description** |\n| --- | --- | --- |\n| _id | ObjectId | unique id of the scan result |\n| findings | Finding | array of the finds per project |\n| path | String | the location of the evidence |\n| line | String | line no of the issue |\n| type | String | scan type |"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Event List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{app_url}}/api/event",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"api",
+						"event"
+					]
+				},
+				"description": "Get the list of events that happen when the user scan the code\n\n| **name** | **type** | **description** |\n| --- | --- | --- |\n| _id | ObjectId | the unique id of the scan event |\n| status | String | status of the event whether \"In Progress\", \"Queued\", \"Success\" or \"Failure\" |\n| queue_time | Date | The datetime of the task is being queued |\n| scan_start_time | Date | datetime of the task is started |\n| scan_end_time | Date | finished time |\n\n,"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Scan Result",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"scan_key\":1231245,\r\n  \"name\":\"sample repo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{app_url}}/api/scan",
+					"host": [
+						"{{app_url}}"
+					],
+					"path": [
+						"api",
+						"scan"
+					]
+				},
+				"description": "Create Scan Result that for repo\n\n| **name** | **type** | **description** |\n| --- | --- | --- |\n| scan_key | Number | foriegn of the scan |\n| name | String | name of the repo |"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "app_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
