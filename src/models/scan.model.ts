@@ -1,28 +1,11 @@
 import { Schema, model, connect, Types } from 'mongoose';
-
-interface IBegin {
-  line: bigint;
-}
-
-interface IPosition {
-  begin: IBegin;
-}
-
-interface ILocation {
-  path: string;
-  positions: IPosition;
-}
-
-interface IFinding {
-  type: string;
-  location: ILocation;
-}
-
-interface IScan {
-  findings: IFinding[];
-  _id: Types.ObjectId;
-  scan_key: string;
-}
+import {
+  IBegin,
+  IPosition,
+  ILocation,
+  IFinding,
+  IScan,
+} from './scan.interface';
 
 const beginSchema = new Schema<IBegin>(
   {
@@ -56,7 +39,7 @@ const findingSchema = new Schema<IFinding>(
 
 const scanSchema = new Schema<IScan>({
   findings: [findingSchema],
-  scan_key: { type: String },
+  scan_key: { type: Number },
 });
 
 const ScanModel = model<IScan>('Scan', scanSchema);

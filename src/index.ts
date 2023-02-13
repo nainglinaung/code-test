@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import db from './db';
 // import routes from './routes/index.route';
+import Agenda from './agenda';
 import scanController from './controllers/scan.controller';
 dotenv.config();
 
