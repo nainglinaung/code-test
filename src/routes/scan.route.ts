@@ -1,14 +1,8 @@
-// import express, { Express, Request, Response } from 'express';
+import express from 'express';
+import scanController from '../controllers/scan.controller';
+const router = express.Router();
 
-// const router = express.Router();
- 
-// router.get('/', (request: Request, response: Response) => {
-//   response.send('Hello world!');
-// });
+router.get('/', scanController.getList);
+router.post('/', scanController.create);
 
-// router.post('/', (request: Request, response: Response) => {
-//   response.send('Hello world!');
-// });
-  
-// export default router;
-  
+export default router;
