@@ -1,43 +1,16 @@
-# 🧰 Simple TypeScript Starter | 2022
+# Node.js Code Challenge for GuardRails
 
-> We talk about a lot of **advanced Node.js and TypeScript** concepts on [the blog](https://khalilstemmler.com), particularly focused around Domain-Driven Design and large-scale enterprise application patterns. However, I received a few emails from readers that were interested in seeing what a basic TypeScript starter project looks like. So I've put together just that.
+### Prerequisites
 
-### Features
+Make sure you have these tools installed
 
-- Minimal
-- TypeScript v4
-- Testing with Jest
-- Linting with Eslint and Prettier
-- Pre-commit hooks with Husky
-- VS Code debugger scripts
-- Local development with Nodemon
+- Docker
+- Node.js (14.0 or higher)
 
-### Scripts
+### Setup
 
-#### `npm run start:dev`
+This is the instruction to setup this project and run in your local machine.
 
-Starts the application in development using `nodemon` and `ts-node` to do hot reloading.
-
-#### `npm run start`
-
-Starts the app in production by first building the project with `npm run build`, and then executing the compiled JavaScript at `build/index.js`.
-
-#### `npm run build`
-
-Builds the app at `build`, cleaning the folder first.
-
-#### `npm run test`
-
-Runs the `jest` tests once.
-
-#### `npm run test:dev`
-
-Run the `jest` tests in watch mode, waiting for file changes.
-
-#### `npm run prettier-format`
-
-Format your code.
-
-#### `npm run prettier-watch`
-
-Format your code in watch mode, waiting for file changes.
+1. Copy `.env.example` file and rename it to `.env`.
+2. Install dependencies.
+3. Run `docker compose up -d` to start docker containers in background.

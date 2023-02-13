@@ -1,5 +1,6 @@
 import { connect } from 'mongoose';
-
 export default async function run() {
-  await connect('mongodb://root:rootpassword@localhost:27017/');
+  await connect(
+    `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@localhost:27017/`,
+  );
 }
