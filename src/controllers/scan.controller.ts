@@ -8,7 +8,8 @@ export default {
   },
 
   create: async (req: Request, res: Response) => {
-    const data = req.body;
+      const data = req.body;
+      console.log("data",data)
     const newScan = new scanModel(data);
     const result = await newScan.save();
     return res.json({ result });

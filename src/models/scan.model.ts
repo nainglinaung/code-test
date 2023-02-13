@@ -10,7 +10,7 @@ interface IPosition {
 
 interface ILocation {
   path: string;
-  position: IPosition;
+  positions: IPosition;
 }
 
 interface IFinding {
@@ -41,7 +41,7 @@ const positionSchema = new Schema<IPosition>(
 const locationSchema = new Schema<ILocation>(
   {
     path: { type: String, required: true },
-    position: { type: positionSchema, required: true },
+    positions: { type: positionSchema, required: true },
   },
   { _id: false },
 );
